@@ -10,6 +10,7 @@
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0.01%, #1a1a1a 100%);
   --theme-main-color: #000;
+  --accent-button-color: #fff;
   --main-font: Inter;
   --accent-font: 'Press Start 2P';
   --normal-weight: 400;
