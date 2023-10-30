@@ -30,7 +30,6 @@
   --heart-contour: #00cc14;
   --normal-weight: 465;
   --bold-weight: 785;
- 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +43,7 @@
       linear-gradient(#007f0c 0, #004306 100%);
     --theme-main-color: #00cc14;
     --accent-button-color: #00cc14;
+    --heart-contour: #00cc14;
     --normal-weight: 465;
     --bold-weight: 785;
   }

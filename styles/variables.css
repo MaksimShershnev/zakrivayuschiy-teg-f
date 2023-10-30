@@ -23,6 +23,5 @@
     clamp(29.6875rem, 22.7655rem + 23.3161vw, 43.75rem)
   ); /* до 475 во весь экран, потом от 475 до 700 px при 1440*/
   --heart-contour: #000;
-  --heart-main-body: none;
   --heart-active: #f00;
 }
