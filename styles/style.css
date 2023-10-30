@@ -16,9 +16,7 @@
 
 .page {
   display: grid;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-items: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   color: var(--theme-main-color);
@@ -151,6 +149,15 @@
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .card {
   inline-size: var(--content-inline-size);
   border: 2px solid var(--theme-main-color, #000);
@@ -227,25 +234,40 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  gap: 6px;
-  margin-inline: 25px;
-  -webkit-margin-after: 21px;
-          margin-block-end: 21px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+  margin: 0 25px 25px;
+  font-size: var(--button-font-size);
 }
 
 .card__icon-button {
-  border: none;
-  -webkit-padding-before: 2px;
-          padding-block-start: 2px;
+  border: 2px solid transparent;
+  height: 38px; /* для соответствия outline при focus-visible высоте кнопки Like */
   background-color: transparent;
   cursor: pointer;
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--theme-main-color);
+  -webkit-transition: border 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+.like-icon {
+  display: inline-block;
+  width: 39px;
+  height: 36px;
 }
 
 .card__like-button {
   position: relative;
   min-inline-size: 130px;
   border: 2px solid var(--theme-main-color, #000);
-  padding: 7.5px 17px 5px;
+  padding: 11px 17px 6px;
   background-color: var(--background-color);
   cursor: pointer;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
@@ -266,6 +288,9 @@
 .button__text {
   font-family: var(--accent-font);
   font-size: var(--button-font-size);
+  inline-size: -webkit-fit-content;
+  inline-size: -moz-fit-content;
+  inline-size: fit-content;
   line-height: 0.9;
   mix-blend-mode: difference;
   color: var(--accent-button-color);
@@ -329,9 +354,86 @@
   height: 21px;
 }
 
+.dialog_popup {
+  border: 2px solid var(--theme-main-color, #000);
+  background-color: var(--background-color);
+  padding: 30px;
+  max-width: 357px;
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+  /* opacity: 0;
+  transition: opacity 0.3s ease-in-out; */
+}
+
+.dialog_popup::-ms-backdrop {
+  background: rgb(0 0 0 / 0.75);
+}
+
+.dialog_popup::backdrop {
+  background: rgb(0 0 0 / 0.75);
+}
+
+/* .dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+} */
+
+.dialog_popup[open] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 28px;
+  /* opacity: 1;
+  transition: opacity 0.3s ease-in-out; */
+}
+
+.popup__container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.dialog-icon {
+  display: inline-block;
+  fill: var(--accent-button-color);
+  mix-blend-mode: difference;
+  inline-size: 39px;
+  block-size: 38px;
+}
+
+.dialog_close-button {
+  position: relative;
+  inline-size: 100%;
+  border: 2px solid var(--theme-main-color, #000);
+  font-size: var(--button-font-size);
+  padding: 11px 17px 6px;
+  background-color: var(--background-color);
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.line-height-extended {
+  line-height: 1.5;
+}
+
 @media (width <= 375px) {
   .header__logo {
-    font-size: clamp(2.75rem, 0.9318rem + 9.0909vw, 3.0625rem);
+    font-size: clamp(2.625rem, -0.5833rem + 15.5556vw, 3.0625rem);
   }
 
   .footer__save-button {
@@ -339,7 +441,12 @@
   }
 
   .save-icon {
-    width: 29px;
-    height: 28px;
+    inline-size: 29px;
+    block-size: 28px;
+  }
+
+  .dialog_popup {
+    max-inline-size: 341px;
+    padding-inline: 40px;
   }
 }
