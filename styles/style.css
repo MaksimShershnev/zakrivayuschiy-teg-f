@@ -26,7 +26,8 @@
   ); /* от 327px при 375 до 368px при 1440  */
   margin-block: 100px;
   border: 2px solid var(--theme-main-color, #000);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
+    Times, serif;
   text-transform: uppercase;
   background-color: var(--background-color, #fff);
 }
@@ -69,11 +70,11 @@
 
 .theme-menu__button {
   position: relative;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
   border: none;
   text-transform: uppercase;
   background-color: transparent;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button[disabled] {
@@ -106,31 +107,31 @@
 .theme-menu__button::after {
   content: '';
   position: absolute;
-  left: 0;
   bottom: -2px;
-  background-color: var(--theme-main-color);
+  left: 0;
   width: 100%;
   height: 2px;
+  background-color: var(--theme-main-color);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: left;
       -ms-transform-origin: left;
           transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .main {
@@ -141,10 +142,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 50px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 50px;
 }
 
 .card {
@@ -163,6 +164,7 @@
 
 .card__image-container {
   position: relative;
+  border-block: 2px solid var(--theme-main-color, #000);
 }
 
 .label-image {
@@ -170,11 +172,15 @@
   position: absolute;
   top: 25px;
   right: 11px;
+  z-index: 1;
   opacity: 0.5;
   color: var(--theme-main-color);
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
+    Times, serif;
   font-weight: 400;
-  font-size: var(--button-font-size);
+  font-size: var(
+    --content-font-size
+  ); /* Задал шрифт больше макета для лучшей читаемости */
   text-transform: uppercase;
   text-shadow:
     -1px -1px var(--background-color),
@@ -193,13 +199,11 @@
 }
 
 .card__image {
-  inline-size: calc(100% + 4px);
+  display: block;
+  inline-size: 100%;
   block-size: 100%;
-  -webkit-margin-start: -2px;
-          margin-inline-start: -2px;
-  outline: 2px solid var(--theme-main-color, #000);
-  outline-offset: -2px;
-  background-size: cover;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card__paragraph {
@@ -232,12 +236,12 @@
 }
 
 .card__icon-button {
-  border: 2px solid transparent;
   height: 38px; /* для соответствия outline при focus-visible высоте кнопки Like */
+  border: 2px solid transparent;
   background-color: transparent;
-  cursor: pointer;
   -webkit-transition: border 0.3s ease;
   transition: border 0.3s ease;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
@@ -258,11 +262,11 @@
   border: 2px solid var(--theme-main-color, #000);
   padding: 11px 17px 6px;
   background-color: var(--background-color);
-  cursor: pointer;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .card__like-button:focus-visible {
@@ -275,18 +279,19 @@
 }
 
 .button__text {
-  font-family: var(--accent-font);
-  font-size: var(--button-font-size);
+  position: relative;
+  z-index: 1;
   inline-size: -webkit-fit-content;
   inline-size: -moz-fit-content;
   inline-size: fit-content;
-  line-height: 0.9;
-  mix-blend-mode: difference;
-  color: var(--accent-button-color);
-  position: relative;
-  z-index: 1;
   -webkit-margin-before: 1px;
           margin-block-start: 1px;
+  color: var(--accent-button-color);
+  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
+    Times, serif;
+  font-size: var(--button-font-size);
+  line-height: 0.9;
+  mix-blend-mode: difference;
 }
 
 .footer {
@@ -300,6 +305,7 @@
 }
 
 .footer__save-button {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,16 +318,15 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  padding: 15px 20px;
-  position: relative;
   max-inline-size: 339px;
   border: 2px solid var(--theme-main-color, #000);
+  padding: 15px 20px;
   background-color: var(--background-color);
-  cursor: pointer;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .footer__save-button:focus-visible {
@@ -334,25 +339,23 @@
 }
 
 .save-icon {
-  display: inline-block;
-  mix-blend-mode: difference;
-  fill: var(--accent-button-color);
   position: relative;
   z-index: 1;
+  display: inline-block;
   width: 21px;
   height: 21px;
+  fill: var(--accent-button-color);
+  mix-blend-mode: difference;
 }
 
 .dialog_popup {
-  border: 2px solid var(--theme-main-color, #000);
-  background-color: var(--background-color);
-  padding: 30px;
   max-width: 357px;
   min-height: -webkit-min-content;
   min-height: -moz-min-content;
   min-height: min-content;
-  /* opacity: 0;
-  transition: opacity 0.3s ease-in-out; */
+  border: 2px solid var(--theme-main-color, #000);
+  padding: 30px;
+  background-color: var(--background-color);
 }
 
 .dialog_popup::-ms-backdrop {
@@ -363,9 +366,13 @@
   background: rgb(0 0 0 / 0.75);
 }
 
-/* .dialog:not([open]) {
+/* .dialog_popup:not([open]) {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.1s ease-in-out;
 } */
 
 .dialog_popup[open] {
@@ -392,20 +399,29 @@
 
 .dialog-icon {
   display: inline-block;
-  fill: var(--accent-button-color);
-  mix-blend-mode: difference;
   inline-size: 39px;
   block-size: 38px;
+  fill: var(--accent-button-color);
+  mix-blend-mode: difference;
 }
 
 .dialog_close-button {
   position: relative;
   inline-size: 100%;
   border: 2px solid var(--theme-main-color, #000);
-  font-size: var(--button-font-size);
   padding: 11px 17px 6px;
+  font-size: var(--button-font-size);
   background-color: var(--background-color);
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
   cursor: pointer;
+}
+
+.dialog_close-button:focus-visible {
+  -webkit-box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
+          box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
@@ -418,6 +434,46 @@
 
 .line-height-extended {
   line-height: 1.5;
+}
+
+.filter-brightness {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+
+.filter-sepia {
+  -webkit-filter: sepia(0.6);
+          filter: sepia(0.6);
+}
+
+.filter-saturate {
+  -webkit-filter: saturate(0.5);
+          filter: saturate(0.5);
+}
+
+.filter-hue-rotate {
+  -webkit-filter: hue-rotate(45deg);
+          filter: hue-rotate(45deg);
+}
+
+.filter-contrast {
+  -webkit-filter: contrast(0.5);
+          filter: contrast(0.5);
+}
+
+.filter-invert {
+  -webkit-filter: invert(1) brightness(0.7);
+          filter: invert(1) brightness(0.7);
+}
+
+.filter-contrast-blur {
+  -webkit-filter: contrast(0.5) blur(3px);
+          filter: contrast(0.5) blur(3px);
+}
+
+.filter-contrast-drop-shadow {
+  -webkit-filter: contrast(1.5) drop-shadow(0 9px 8px black);
+          filter: contrast(1.5) drop-shadow(0 9px 8px black);
 }
 
 @media (width <= 375px) {

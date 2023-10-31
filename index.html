@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta
+    <meta
       name="description"
-      content="Страница о проблемах с концентрацией внимания и советах как это преодолеть"
-    /> -->
+      content="Воспоминания о пройденном пути в обучении"
+    />
     <meta name="color-scheme" content="dark light" />
     <title>Закрывающий тег</title>
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
@@ -23,7 +23,7 @@
   </head>
   <body class="page">
     <header class="header">
-      <p class="header__logo">&lt;/html&gt;</p>
+      <p class="header__logo" aria-hidden="true">&lt;/html&gt;</p>
       <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <ul class="theme-menu__list">
@@ -43,7 +43,9 @@
             </button>
           </li>
           <li class="theme-menu__item">
-            <button type="button" data-theme="light" class="theme-menu__button">Светло</button>
+            <button type="button" data-theme="light" class="theme-menu__button">
+              Светло
+            </button>
           </li>
         </ul>
       </nav>
@@ -54,11 +56,12 @@
           Фритрек и нулевой спринт: Подготовка к работе
         </h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Новое</span>
           <img
-            class="card__image"
+            class="card__image filter-brightness"
             src="./images/image-1.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Человек смотрит в водоворот, символизирующий что-то новое и неизвестное"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
@@ -67,10 +70,19 @@
             основами и настроиться на учёбу. И, возможно, подумать, как новые
             знания могут повлиять на ваше будущее.
           </p>
-          <p>Место для ваших воспоминаний о начале обучения.</p>
+          <p>
+            <q
+              >Лучше попробовать и пожалеть, чем жалеть, что никогда не
+              пробовал.</q
+            >
+          </p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -106,30 +118,39 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          1 спринт: Я — чистый лист
-        </h2>
+        <h2 class="card__title">1 спринт: Я — чистый лист</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Погружение</span>
           <img
-            class="card__image"
+            class="card__image filter-sepia"
             src="./images/image-2.jpg"
             alt="Изображение символизирующее начало обучения"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            На первых этапах мы работали со страхами и сомнениями, которые часто испытывают новички. Один из них — страх перед чистым листом. Это, конечно же, намного сложнее, чем боязнь куска бумаги. Часто за этим ощущением скрываются более глубокие вопросы: с чего начать? а вдруг будет слишком сложно? что, если я не справлюсь?
+            На первых этапах мы работали со страхами и сомнениями, которые часто
+            испытывают новички. Один из них — страх перед чистым листом. Это,
+            конечно же, намного сложнее, чем боязнь куска бумаги. Часто за этим
+            ощущением скрываются более глубокие вопросы: с чего начать? а вдруг
+            будет слишком сложно? что, если я не справлюсь?
           </p>
-          <p>Место для ваших воспоминаний о начале первого спринта.</p>
+          <p>Требовалось преодолеть эти страхи и освоить что-то новое...</p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -165,30 +186,40 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          1 спринт: А если не получится?
-        </h2>
+        <h2 class="card__title">1 спринт: А если не получится?</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Первый шаг</span>
           <img
-            class="card__image"
+            class="card__image filter-saturate"
             src="./images/image-3.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Пройден первый шаг на пути к цели"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            Первый проект — позади! Но это всё ещё самое начало пути. Радость могла быстро померкнуть и смениться ожиданием провала. Или вы, наоборот, могли вдохновиться успехами и поверить в себя.
+            Первый проект — позади! Но это всё ещё самое начало пути. Радость
+            могла быстро померкнуть и смениться ожиданием провала. Или вы,
+            наоборот, могли вдохновиться успехами и поверить в себя.
           </p>
-          <p>Место для ваших воспоминаний об окончании первого спринта.</p>
+          <p>
+            Чувство удовлетворения от проделанной работы и вера, что все
+            получится
+          </p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -224,30 +255,42 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          2 спринт: Погоня за идеалом
-        </h2>
+        <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Баланс</span>
           <img
-            class="card__image"
+            class="card__image filter-hue-rotate"
             src="./images/image-4.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Сделанная работа - это лучше, чем идельно"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы понять, как много ещё впереди. Вы могли попытаться погнаться за идеалом и понять, что он недостижим. А, может, вы вовсе и не подвержены перфекционизму и вместо того, чтобы сделать идеально, старались просто сделать.
+            На этом этапе вы уже достаточно разбирались в основах вёрстки, чтобы
+            понять, как много ещё впереди. Вы могли попытаться погнаться за
+            идеалом и понять, что он недостижим. А, может, вы вовсе и не
+            подвержены перфекционизму и вместо того, чтобы сделать идеально,
+            старались просто сделать.
           </p>
-          <p>Место для ваших воспоминаний о начале второго спринта.</p>
+          <p>
+            Было важно соблюсти баланс, сделать работу качественно, применив
+            полученные знания.
+          </p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -283,30 +326,43 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          2 спринт: О тех, кто рядом
-        </h2>
+        <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Поддержка</span>
           <img
-            class="card__image"
+            class="card__image filter-contrast"
             src="./images/image-5.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Изображение символизирующее помощь и поддержку в трудные минуты"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            Всё это время вы были не одиноки (хотя, возможно, иногда и чувствовали, что одни против целого мира). Вас окружали одногруппники, команда сопровождения и просто близкие люди, которым можно пожаловаться, если очередной макет просто так не поддавался. Осваивать что-то новое легче, когда рядом есть единомышленники, не правда ли?
+            Всё это время вы были не одиноки (хотя, возможно, иногда и
+            чувствовали, что одни против целого мира). Вас окружали
+            одногруппники, команда сопровождения и просто близкие люди, которым
+            можно пожаловаться, если очередной макет просто так не поддавался.
+            Осваивать что-то новое легче, когда рядом есть единомышленники, не
+            правда ли?
           </p>
-          <p>Место для ваших воспоминаний об окончании второго спринта.</p>
+          <p>
+            Благодаря помощи наставников и поддержке близких сделан еще один шаг
+            на пути к цели
+          </p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -342,30 +398,37 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          3 спринт: Обходные стратегии
-        </h2>
+        <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Прогресс</span>
           <img
-            class="card__image"
+            class="card__image filter-invert"
             src="./images/image-6.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Изображение символизирующее начало 3 спринта"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            На этом курсе вы постоянно решали разные задачи. В какой-то момент вам могло показаться, что решения просто иссякли. Значит, пришло время посмотреть на задачу под другим углом.
+            На этом курсе вы постоянно решали разные задачи. В какой-то момент
+            вам могло показаться, что решения просто иссякли. Значит, пришло
+            время посмотреть на задачу под другим углом.
           </p>
-          <p>Место для ваших воспоминаний о начале третьего спринта.</p>
+          <p>В ожидании изучения современного подхода к верстке веб-сайтов</p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -401,30 +464,39 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          3 спринт: Когда опускаются руки
-        </h2>
+        <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Мотивация</span>
           <img
-            class="card__image"
+            class="card__image filter-contrast-blur"
             src="./images/image-7.jpg"
-            alt="Изображение символизирующее начало обучения"
+            alt="Когда пазл не складывается"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            Во время учёбы часто возникает чувство, когда не знаешь, за что хвататься. Вроде и проектную пора сдавать, и задачи хочется порешать, и в теории получше разобраться, и жизнь не забыть пожить. В такие моменты очень нужна концентрация. Вспомните, откуда вы её черпали.
+            Во время учёбы часто возникает чувство, когда не знаешь, за что
+            хвататься. Вроде и проектную пора сдавать, и задачи хочется
+            порешать, и в теории получше разобраться, и жизнь не забыть пожить.
+            В такие моменты очень нужна концентрация. Вспомните, откуда вы её
+            черпали.
           </p>
-          <p>Место для ваших воспоминаний об окончании третьего спринта.</p>
+          <p>Правильное распределение времени - залог успеха.</p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -460,30 +532,43 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
       <section class="card">
-        <h2 class="card__title">
-          «Сейчас я здесь»
-        </h2>
+        <h2 class="card__title">«Сейчас я здесь»</h2>
         <div class="card__image-container">
-          <span class="label-image" aria-hidden="true">&lt;/html&gt;</span>
+          <span class="label-image" aria-hidden="true">Успех</span>
           <img
-            class="card__image"
+            class="card__image filter-contrast-drop-shadow"
             src="./images/image-8.jpg"
             alt="Изображение символизирующее начало обучения"
+            loading="lazy"
           />
         </div>
         <div class="card__paragraph">
           <p>
-            Сейчас вы уже очень много знаете о вёрстке. Но это только начало. Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с окончанием курса учёба не заканчивается. Вёрстка — это целый мир. И этот мир постоянно меняется. Познать его полностью не получится, но это тот случай, когда важен сам процесс познания. Ведь часто путь — и есть результат.
+            Сейчас вы уже очень много знаете о вёрстке. Но это только начало.
+            Во-первых, впереди ещё много материала про «красотищу». Во-вторых, с
+            окончанием курса учёба не заканчивается. Вёрстка — это целый мир. И
+            этот мир постоянно меняется. Познать его полностью не получится, но
+            это тот случай, когда важен сам процесс познания. Ведь часто путь —
+            и есть результат.
           </p>
-          <p>Место, чтобы остановиться, подумать и написать, что вы чувствуете в этой точке пути.</p>
+          <p>
+            Чувство гордости и удовлетворенности от проделанной разоты за три
+            месяца обучения.
+          </p>
         </div>
         <div class="card__buttons">
-          <button type="button" class="card__icon-button" aria-label="Кнопка Поставить лайк в виде сердца">
+          <button
+            type="button"
+            class="card__icon-button"
+            aria-label="Кнопка Поставить лайк в виде сердца"
+          >
             <svg
               class="like-icon"
               xmlns="http://www.w3.org/2000/svg"
@@ -519,37 +604,44 @@
             class="card__like-button hover_animation_button"
             aria-label="Кнопка Поставить лайк"
           >
-            <span class="button__text" aria-label="Кнопка Поставить лайк">Like</span>
+            <span class="button__text" aria-label="Кнопка Поставить лайк"
+              >Like</span
+            >
           </button>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <button 
-        type="button" 
-        class="footer__save-button hover_animation_button" 
+      <button
+        type="button"
+        class="footer__save-button hover_animation_button"
         onclick="window['dialog-id'].showModal();"
         aria-controls="dialog-id"
       >
         <svg viewBox="0 0 39 38" class="save-icon">
-          <use href="./svg/floppy.svg#floppy">
-        </svg> 
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
         <span class="button__text">Сохранить на память</span>
-      </button> 
+      </button>
     </footer>
     <dialog id="dialog-id" class="dialog_popup">
       <div class="popup__container">
         <svg viewBox="0 0 39 38" class="dialog-icon">
-          <use href="./svg/floppy.svg#floppy">
-        </svg> 
-        <span class="button__text line-height-extended text-uppercase">Вставьте дискету, чтобы продолжить</span>
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text line-height-extended text-uppercase"
+          >Вставьте дискету, чтобы продолжить</span
+        >
       </div>
-      <button 
-        type="button" 
-        class="dialog_close-button hover_animation_button" 
-        onclick="window['dialog-id'].close()">
-          <span class="button__text text-uppercase" aria-label="Закрыть окно">Ок</span>
-      </button>   
+      <button
+        type="button"
+        class="dialog_close-button hover_animation_button"
+        onclick="window['dialog-id'].close()"
+      >
+        <span class="button__text text-uppercase" aria-label="Закрыть окно"
+          >Ок</span
+        >
+      </button>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>

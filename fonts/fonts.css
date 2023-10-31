@@ -1,6 +1,3 @@
-/* В этом файле вы импортируете все шрифты для сайта. Один из них вариативный и требует особенной настройки */
-/* 123 */
-
 @font-face {
   font-family: 'Press Start 2P';
   src: url(./PressStart2P-Regular.woff) format('woff');
