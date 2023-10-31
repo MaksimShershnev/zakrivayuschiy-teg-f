@@ -19,7 +19,7 @@
   justify-items: center;
   place-content: end center;
   inline-size: var(--content-inline-size);
-  block-size: clamp(
+  min-block-size: clamp(
     20.4375rem,
     19.5352rem + 3.8498vw,
     23rem
@@ -39,6 +39,8 @@
     2.7104rem + 1.5023vw,
     4.0625rem
   ); /* от 49px до 65px при 1440 */
+  text-decoration: none;
+  cursor: default;
 }
 
 .header__title {
@@ -90,19 +92,16 @@
   -webkit-animation: shift 0.5s infinite ease-in-out alternate;
           animation: shift 0.5s infinite ease-in-out alternate;
   inset-inline-start: -19px;
+  inset-block-start: 0;
 }
 
 .theme-menu__button:hover {
   opacity: 0.6;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
   cursor: pointer;
 }
 
 .theme-menu__button:focus-visible {
   opacity: 0.6;
-  -webkit-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -110,8 +109,8 @@
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 100%;
-  height: 2px;
+  inline-size: 100%;
+  block-size: 2px;
   background-color: var(--theme-main-color);
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
@@ -126,10 +125,6 @@
 }
 
 .theme-menu__button:focus-visible::after {
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
@@ -147,6 +142,8 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 50px;
+  -webkit-margin-after: 100px;
+          margin-block-end: 100px;
 }
 
 .card {
@@ -179,9 +176,7 @@
   font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
     Times, serif;
   font-weight: 400;
-  font-size: var(
-    --content-font-size
-  ); /* Задал шрифт больше макета для лучшей читаемости */
+  font-size: var(--button-font-size);
   text-transform: uppercase;
   text-shadow:
     -1px -1px var(--background-color),
@@ -191,7 +186,10 @@
   mix-blend-mode: hard-light;
 }
 
-@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+@supports (
+  (text-stroke: 1px var(--background-color)) or
+    (-webkit-text-stroke: 1px var(--background-color))
+) {
   .label-image {
     text-shadow: none;
     -webkit-text-stroke: 0.5px var(--background-color);
@@ -202,9 +200,9 @@
 .card__image {
   display: block;
   inline-size: 100%;
-  block-size: 100%;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: 1 / 1;
 }
 
 .card__paragraph {
@@ -237,29 +235,28 @@
 }
 
 .card__icon-button {
-  height: 38px; /* для соответствия outline при focus-visible высоте кнопки Like */
-  border: 2px solid transparent;
+  min-block-size: 38px;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
   background-color: transparent;
-  -webkit-transition: border 0.3s ease;
-  transition: border 0.3s ease;
+  -webkit-transition: outline 0.3s ease;
+  transition: outline 0.3s ease;
   cursor: pointer;
+  border: none;
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid var(--theme-main-color);
-  -webkit-transition: border 0.3s ease;
-  transition: border 0.3s ease;
+  outline: 2px solid var(--theme-main-color);
 }
 
 .like-icon {
-  display: inline-block;
-  width: 39px;
-  height: 36px;
+  display: block;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
-.card__like-button {
+.button {
   position: relative;
-  min-inline-size: 130px;
   border: 2px solid var(--theme-main-color, #000);
   padding: 11px 17px 6px;
   background-color: var(--background-color);
@@ -270,13 +267,13 @@
   cursor: pointer;
 }
 
-.card__like-button:focus-visible {
+.button:focus-visible {
   -webkit-box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
           box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+
+.card__like-button {
+  min-inline-size: 130px;
 }
 
 .button__text {
@@ -295,18 +292,7 @@
   mix-blend-mode: difference;
 }
 
-.footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-block: 50px 100px;
-}
-
-.footer__save-button {
-  position: relative;
+.save-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -320,40 +306,24 @@
           align-items: center;
   gap: 8px;
   max-inline-size: 339px;
-  border: 2px solid var(--theme-main-color, #000);
   padding: 15px 20px;
-  background-color: var(--background-color);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.footer__save-button:focus-visible {
-  -webkit-box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
-          box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .save-icon {
   position: relative;
   z-index: 1;
-  display: inline-block;
-  width: 21px;
-  height: 21px;
+  display: block;
+  inline-size: 21px;
+  block-size: 21px;
   fill: var(--accent-button-color);
   mix-blend-mode: difference;
 }
 
 .dialog_popup {
-  max-width: 357px;
-  min-height: -webkit-min-content;
-  min-height: -moz-min-content;
-  min-height: min-content;
+  max-inline-size: 357px;
+  min-block-size: -webkit-min-content;
+  min-block-size: -moz-min-content;
+  min-block-size: min-content;
   border: 2px solid var(--theme-main-color, #000);
   padding: 30px;
   background-color: var(--background-color);
@@ -367,15 +337,6 @@
   background: rgb(0 0 0 / 0.75);
 }
 
-/* .dialog_popup:not([open]) {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.1s ease-in-out;
-} */
-
 .dialog_popup[open] {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,8 +346,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 28px;
-  /* opacity: 1;
-  transition: opacity 0.3s ease-in-out; */
 }
 
 .popup__container {
@@ -399,7 +358,7 @@
 }
 
 .dialog-icon {
-  display: inline-block;
+  display: block;
   inline-size: 39px;
   block-size: 38px;
   fill: var(--accent-button-color);
@@ -407,26 +366,7 @@
 }
 
 .dialog_close-button {
-  position: relative;
   inline-size: 100%;
-  border: 2px solid var(--theme-main-color, #000);
-  padding: 11px 17px 6px;
-  font-size: var(--button-font-size);
-  background-color: var(--background-color);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.dialog_close-button:focus-visible {
-  -webkit-box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
-          box-shadow: 2px 2px 0 0 var(--theme-main-color, #000);
-  -webkit-transition: -webkit-box-shadow 0.3s ease;
-  transition: -webkit-box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease;
-  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
 }
 
 .text-uppercase {
@@ -482,7 +422,7 @@
     font-size: clamp(2.625rem, -0.5833rem + 15.5556vw, 3.0625rem);
   }
 
-  .footer__save-button {
+  .save-button {
     max-inline-size: 310px;
   }
 

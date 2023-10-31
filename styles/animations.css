@@ -151,7 +151,7 @@
 
 /* Сделано через отдельный класс чтобы применять разным кнопкам */
 
-.hover_animation_button::after {
+.animation_button::after {
   content: '';
   position: absolute;
   left: 0;
@@ -171,7 +171,7 @@
   transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
-.hover_animation_button:hover::after {
+.animation_button:hover::after {
   -webkit-transform: scaleX(1);
       -ms-transform: scaleX(1);
           transform: scaleX(1);
