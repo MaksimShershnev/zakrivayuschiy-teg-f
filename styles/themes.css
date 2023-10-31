@@ -9,8 +9,8 @@
   --theme-main-color: #000;
   --accent-button-color: #fff;
   --heart-contour: #000;
-  --normal-weight: 400;
-  --bold-weight: 700;
+  --main-font-normal-weight: 400;
+  --main-font-bold-weight: 700;
 }
 
 :root.theme-dark {
@@ -21,8 +21,8 @@
   --theme-main-color: #00cc14;
   --accent-button-color: #00cc14;
   --heart-contour: #00cc14;
-  --normal-weight: 465;
-  --bold-weight: 785;
+  --main-font-normal-weight: 465;
+  --main-font-bold-weight: 785;
 }
 
 @media (prefers-color-scheme: dark) {

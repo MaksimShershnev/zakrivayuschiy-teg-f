@@ -9,7 +9,7 @@
   background-image: var(--background-image);
   background-size: cover;
   background-attachment: fixed;
-  font-variation-settings: 'wght' var(--normal-weight, 400);
+  font-variation-settings: 'wght' var(--main-font-normal-weight);
 }
 
 .header {
@@ -26,14 +26,14 @@
   ); /* от 327px при 375 до 368px при 1440  */
   margin-block: 100px;
   border: 2px solid var(--theme-main-color, #000);
-  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
-    Times, serif;
+  font-family: var(--accent-font, 'Press Start 2P'), Arial, Helvetica,
+    sans-serif;
   text-transform: uppercase;
   background-color: var(--background-color, #fff);
 }
 
 .header__logo {
-  font-weight: var(--normal-weight);
+  font-weight: var(--accent-font-normal-weight);
   font-size: clamp(
     3.0625rem,
     2.7104rem + 1.5023vw,
@@ -44,7 +44,7 @@
 .header__title {
   -webkit-margin-before: 20px;
           margin-block-start: 20px;
-  font-weight: var(--normal-weight);
+  font-weight: var(--accent-font-normal-weight);
   font-size: clamp(
     0.875rem,
     0.6769rem + 0.8451vw,
@@ -71,6 +71,7 @@
 .theme-menu__button {
   position: relative;
   border: none;
+  font-weight: var(--accent-font-normal-weight);
   text-transform: uppercase;
   background-color: transparent;
   -webkit-transition: opacity 0.3s ease;
@@ -159,7 +160,7 @@
   margin: 5px 10px 4px;
   font-size: inherit;
   line-height: 1.2; /* для соответствия макету */
-  font-variation-settings: 'wght' var(--bold-weight, 700);
+  font-variation-settings: 'wght' var(--main-font-bold-weight);
 }
 
 .card__image-container {

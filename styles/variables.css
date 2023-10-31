@@ -10,8 +10,9 @@
   --accent-button-color: #fff;
   --main-font: Inter;
   --accent-font: 'Press Start 2P';
-  --normal-weight: 400;
-  --bold-weight: 700;
+  --main-font-normal-weight: 400;
+  --main-font-bold-weight: 700;
+  --accent-font-normal-weight: 400;
   --content-font-size: 18px;
   --button-font-size: 14px;
   --extra-line-height: 1.16667;
