@@ -168,7 +168,7 @@
   content: '';
   position: absolute;
   top: 25px;
-  right: 11px;
+  right: clamp(0.6875rem, 0.3794rem + 1.3146vw, 1.5625rem);
   z-index: 1;
   opacity: 0.5;
   color: var(--theme-main-color);
