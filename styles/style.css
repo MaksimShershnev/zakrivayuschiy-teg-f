@@ -26,8 +26,7 @@
   ); /* от 327px при 375 до 368px при 1440  */
   margin-block: 100px;
   border: 2px solid var(--theme-main-color, #000);
-  font-family: var(--accent-font, 'Press Start 2P'), Arial, Helvetica,
-    sans-serif;
+  font-family: var(--accent-font, 'Press Start 2P'), fantasy, sans-serif;
   text-transform: uppercase;
   background-color: var(--background-color, #fff);
 }
@@ -173,8 +172,7 @@
   z-index: 1;
   opacity: 0.5;
   color: var(--theme-main-color);
-  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
-    Times, serif;
+  font-family: var(--accent-font, 'Press Start 2P'), fantasy, sans-serif;
   font-weight: 400;
   font-size: var(--button-font-size);
   text-transform: uppercase;
@@ -291,8 +289,7 @@
   -webkit-margin-before: 1px;
           margin-block-start: 1px;
   color: var(--accent-button-color);
-  font-family: var(--accent-font, 'Press Start 2P'), Georgia, 'Times New Roman',
-    Times, serif;
+  font-family: var(--accent-font, 'Press Start 2P'), fantasy, sans-serif;
   font-size: var(--button-font-size);
   line-height: 0.9;
   mix-blend-mode: difference;
